@@ -26,7 +26,7 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    buildImage 'wael98/demo-app:jma-3.0'   
+                    buildImage 'wael98/demo-app:jma-3.1'   
                 }
             }
         }
