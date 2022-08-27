@@ -16,9 +16,9 @@ def deployApp() {
      
      echo "deploying the application"
      withCredentials([usernamePassword(credentialsId:'nexus-docker-repo',usernameVariable:'USER',passwordVariable:'PWD')]) {
-        sh "echo $PWD | docker login -u $USER --password-stdin localhost:8083"
-        sh "docker build -t localhost:8083/java-maven-app:2.5 ."
-        sh "docker push localhost:8083/java-maven-app:2.5"
+        sh "echo $PWD | docker login -u $USER --password-stdin localhost:8083/repository/docker-hosted/"
+        sh "docker build -t localhost:8083/repository/docker-hosted/java-maven-app:2.5 ."
+        sh "docker push localhost:8083/repository/docker-hosted/java-maven-app:2.5"
     }
               
           
